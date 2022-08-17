@@ -5,6 +5,7 @@
 - read [Object graph dependency analysis](http://samuelgoodwin.tumblr.com/post/18345393597/object-graph-dependency-analysis) by Samuel Goodwin
 - see also jominus blog post [Dependency Graph Tool for iOS Projects](http://jomnius.blogspot.com/2012/01/dependency-graph-tool-for-ios-projects.html)
 - yet another use case on vigorouscoding.com [Better get it right the first time](http://www.vigorouscoding.com/2011/12/better-get-it-right-the-first-time/)
+- 2022-08-17 Update script to adapt to Python3.
 
 # License
 
@@ -41,7 +42,7 @@ How do we get from the dependencies graph to a better design? There's no determi
 
 #### 1. Generate the graph
 
-    $ python objc_dep.py /path/to/FSWalker > fswalker.dot
+    $ python3 objc_dep.py /path/to/FSWalker > fswalker.dot
 
 #### 2. Open it in OmniGraffle
 
@@ -93,7 +94,7 @@ Here is the kind of chart you can expect with a 100 classes project.
 
 #### Using options
 
-`% python objc_dep.py /path/to/repo -x "(^Internal|secret)" -i subdir1 subdir2 > graph.dot`
+`% python3 objc_dep.py /path/to/repo -x "(^Internal|secret)" -i subdir1 subdir2 > graph.dot`
 
 Will exclude files with names that begin with "Internal", or contain the word "secret". Additionally all files in folders named subdir1 and subdir2 are ignored.
 
